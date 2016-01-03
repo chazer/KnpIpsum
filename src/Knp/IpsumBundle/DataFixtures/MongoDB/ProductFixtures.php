@@ -3,13 +3,14 @@
 namespace Knp\IpsumBundle\DataFixtures\MongoDB;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 use Knp\IpsumBundle\Document\Product;
 use Knp\IpsumBundle\Document\Category;
 
 
 class ProductFixtures implements FixtureInterface
 {
-    public function load($dm)
+    public function load(ObjectManager $dm)
     {
         $catFood = new Product();
         $catFood->setName('Cat Food');
