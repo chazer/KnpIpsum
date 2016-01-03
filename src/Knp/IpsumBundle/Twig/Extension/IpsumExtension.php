@@ -28,7 +28,10 @@ class IpsumExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'code' => new \Twig_Function_Method($this, 'getCode', array('is_safe' => array('html'))),
+            'code' => new \Twig_SimpleFunction('code', array($this, 'getCode'), array(
+                    'is_safe' => array('html'),
+                    'node_class' => 'Knp\IpsumBundle\Twig\Node\SourceCodeFunction',
+                )),
         );
     }
 
@@ -50,7 +53,7 @@ class IpsumExtension extends \Twig_Extension
         $template = $this->getTemplateCode($template);
 
         // remove the code block
-        $template = str_replace('{% set code = code(_self) %}', '', $template);
+        $template = str_replace('{% set code = code() %}', '', $template);
         $template = $this->cleanCode($template);
 
         $featureName = preg_replace('/^.*Controller\/([^\/]+)Controller\.php\:\d+$/', '$1', $controllerPath);
