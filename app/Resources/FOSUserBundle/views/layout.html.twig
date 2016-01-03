@@ -15,7 +15,7 @@
         {% block fos_user_content %}{% endblock %}
     </div>
 
-    {% for key, flash in app.session.getFlashes() %}
+    {% for key, flash in app.session.flashbag.all() %}
     <div class="{{ flash }}" style="margin-bottom: 5px;">
         {{ key|trans({}, 'FOSUserBundle') }}
     </div>
