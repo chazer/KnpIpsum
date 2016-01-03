@@ -1,6 +1,5 @@
 _imagine:
-    resource: .
-    type:     imagine
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
 knp_ipsum:
     resource: "@KnpIpsumBundle/Resources/config/routing.yml"
