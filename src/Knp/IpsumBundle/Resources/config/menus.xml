@@ -11,7 +11,7 @@
     <services>
         <service id="menu.ipsum" class="%menu.ipsum.class%" scope="request">
             <tag name="knp_menu.menu" alias="ipsum" />
-            <argument type="service" id="request" />
+            <argument type="service" id="knp_menu.factory" />
             <argument type="service" id="router" />
         </service>
     </services>
