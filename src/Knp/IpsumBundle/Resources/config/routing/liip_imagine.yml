@@ -1,3 +1,3 @@
 knp_ipsum_liip_imagine:
-    pattern:  /liip-imagine
+    path:  /liip-imagine
     defaults: { _controller: KnpIpsumBundle:LiipImagine:index }

@@ -1,9 +1,9 @@
 knp_ipsum:
-    pattern:  /
+    path:  /
     defaults: { _controller: KnpIpsumBundle:Summary:index }
 
 knp_ipsum_twig:
-    pattern:  /twig/{name}
+    path:  /twig/{name}
     defaults: { _controller: KnpIpsumBundle:Twig:hello }
 
 knp_ipsum_form:
