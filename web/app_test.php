@@ -10,8 +10,16 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
     die('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
 
+$loader = require __DIR__.'/../app/autoload.php';
 require_once __DIR__.'/../app/bootstrap.php.cache';
 require_once __DIR__.'/../app/AppKernel.php';
+
+// Enable loader cache
+/*
+$apcLoader = new Symfony\Component\ClassLoader\ApcClassLoader(sha1(__FILE__), $loader);
+$loader->unregister();
+$apcLoader->register(true);
+*/
 
 use Symfony\Component\HttpFoundation\Request;
 
